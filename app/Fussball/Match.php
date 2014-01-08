@@ -4,6 +4,8 @@ use LaravelBook\Ardent\Ardent;
 
 class Match extends Ardent {
 
+    protected $fillable = array('name','status');
+
     /**
      * Ardent validation rules
      */
@@ -11,4 +13,9 @@ class Match extends Ardent {
         'name'                  => 'required|between:1,16',
         'status'                => 'required|in:open,playing,finished,closed'
     );
+
+    public function scores()
+    {
+        return $this->hasMany('Score');
+    }
 }
