@@ -19,10 +19,14 @@ POST /matches (accepts application/json, parameters: name and status ('open','pl
 ```
 
 **Example to post a new match**  
-`curl -X POST -H "Content-Type: application/json" -d '{"name":"match name", "status":"open"}' http://localhost/matches`
+```
+curl -X POST -H "Content-Type: application/json" \
+-d '{"name":"match name", "status":"open"}' http://localhost/matches
+```
 
 **To get started:**  
-+ Configure a MySQL database and edit `/app/config/database.php` with the connection details
++ Create a database and edit `/app/config/database.php` with the connection details
++ Run `composer install`
 + Run `php artisan migrate`
 + Run `php artisan db:seed` (optional) if you want to seed the database with some data
 
