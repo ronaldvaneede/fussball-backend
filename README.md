@@ -6,27 +6,27 @@ Based on Laravel 4.1
 + Reading all matches
 + Reading a specific match
 + Reading a specific match with scores
-+ Reading scores of a specfic match
++ Reading scores of a specific match
 
 **Routing**  
 ```
-GET  /matches  
-GET  /matches/{match_id}  
-GET  /matches/{match_id}?scores=true
-GET  /matches/{match_id}/scores  
-GET  /matches/{match_id}/scores/{score_id}  
-POST /matches (accepts application/json, parameters: name and status ('open','playing','finished' or 'closed'))
+GET  /api/v1/matches
+GET  /api/v1/matches/{match_id}
+GET  /api/v1/matches/{match_id}?scores=true
+GET  /api/v1/matches/{match_id}/scores
+GET  /api/v1/matches/{match_id}/scores/{score_id}
+POST /api/v1/matches (accepts application/json, parameters: name and status ('open','playing','finished' or 'closed'))
 ```
 
 **Example to post a new match**  
 ```
 curl -X POST -H "Content-Type: application/json" \
--d '{"name":"match name", "status":"open"}' http://localhost/matches
+-d '{"name":"match name", "status":"open"}' http://localhost/api/v1/matches
 ```
 
 **To get started:**  
 + Create a database and edit `/app/config/database.php` with the connection details
 + Run `composer install`
-+ Run `php artisan migrate`
-+ Run `php artisan db:seed` (optional) if you want to seed the database with some data
++ Run `artisan migrate`
++ Run `artisan db:seed` (optional) if you want to seed the database with some data
 

@@ -11,11 +11,9 @@
 |
 */
 
-Route::resource('matches', 'MatchController');
-Route::resource('matches.scores', 'MatchScoreController');
-
-Route::get('/', function()
+// Route group for API versioning
+Route::group(array('prefix' => 'api/v1'), function()
 {
-	return View::make('hello');
+    Route::resource('matches', 'MatchController');
+    Route::resource('matches.scores', 'MatchScoreController');
 });
-
