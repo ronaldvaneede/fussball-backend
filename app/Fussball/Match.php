@@ -1,6 +1,7 @@
 <?php namespace Fussball;
 
 use LaravelBook\Ardent\Ardent;
+use Fussball\Score;
 
 class Match extends Ardent {
 
@@ -16,6 +17,6 @@ class Match extends Ardent {
 
     public function scores()
     {
-        return $this->hasMany('Score');
+        return $this->hasMany('Fussball\Score');
     }
 }

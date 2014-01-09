@@ -2,21 +2,20 @@
 
 use Fussball\Score;
 
-
 class EloquentScoreRepository implements  ScoreRepositoryInterface {
 
     public function all()
     {
-        Score::all();
+        return Score::all();
     }
 
     public function find($id)
     {
-        Score::find($id);
+        return Score::find($id);
     }
 
     public function create($input)
     {
-        Score::create($input);
+        return Score::create($input);
     }
 }

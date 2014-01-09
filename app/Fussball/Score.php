@@ -15,6 +15,6 @@ class Score extends Ardent {
 
     public function match()
     {
-        return $this->belongsTo('Match');
+        return $this->belongsTo('Fussball\Match');
     }
 }

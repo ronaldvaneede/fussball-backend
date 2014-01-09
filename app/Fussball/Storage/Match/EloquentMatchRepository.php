@@ -6,16 +6,16 @@ class EloquentMatchRepository implements MatchRepositoryInterface {
 
     public function all()
     {
-        Match::all();
+        return Match::all();
     }
 
     public function find($id)
     {
-        Match::find($id);
+        return Match::find($id);
     }
 
     public function create($input)
     {
-        Match::create($input);
+        return Match::create($input);
     }
 }

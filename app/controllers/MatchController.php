@@ -1,8 +1,16 @@
 <?php
 
+use Fussball\Storage\Match\MatchRepositoryInterface;
 use Illuminate\Support\Facades\Response;
 
 class MatchController extends \BaseController {
+
+    /** @var \Fussball\Storage\Match\MatchRepositoryInterface */
+    protected $match;
+
+    public function __construct(MatchRepositoryInterface $match) {
+        $this->match = $match;
+    }
 
 	/**
 	 * Display a listing of the resource.
@@ -11,7 +19,7 @@ class MatchController extends \BaseController {
 	 */
 	public function index()
 	{
-        return "Showing all matches";
+        return $this->match->all();
 	}
 
 	/**
@@ -42,7 +50,10 @@ class MatchController extends \BaseController {
 	 */
 	public function show($id)
 	{
-        return "Showing match $id";
+        /** @var $match \Fussball\Match */
+        $match = $this->match->find($id);
+        //$match->load('scores');
+        return $match;
 	}
 
 	/**

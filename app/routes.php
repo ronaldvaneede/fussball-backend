@@ -11,10 +11,11 @@
 |
 */
 
+Route::resource('matches', 'MatchController');
+Route::resource('matches.scores', 'MatchScoreController');
+
 Route::get('/', function()
 {
 	return View::make('hello');
 });
 
-Route::resource('matches', 'MatchController');
-Route::resource('matches.scores', 'ScoreController');

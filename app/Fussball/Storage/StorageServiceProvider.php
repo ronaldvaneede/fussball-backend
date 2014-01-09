@@ -12,7 +12,11 @@ class StorageServiceProvider extends ServiceProvider {
     public function register()
     {
         $this->app->bind(
-            'Fussball\Storage\Lobby\LobbyRepositoryInterface', 'Fussball\Storage\Lobby\EloquentLobbyRepository'
+            'Fussball\Storage\Match\MatchRepositoryInterface', 'Fussball\Storage\Match\EloquentMatchRepository'
+        );
+
+        $this->app->bind(
+            'Fussball\Storage\Score\ScoreRepositoryInterface', 'Fussball\Storage\Score\EloquentScoreRepository'
         );
     }
 }
