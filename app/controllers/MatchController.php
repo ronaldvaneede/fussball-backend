@@ -1,6 +1,7 @@
 <?php
 
 use Fussball\Storage\Match\MatchRepositoryInterface;
+use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Response;
 
 class MatchController extends \BaseController {
@@ -39,7 +40,7 @@ class MatchController extends \BaseController {
 	 */
 	public function store()
 	{
-		//
+        return $this->match->create(Input::get());
 	}
 
 	/**
@@ -52,7 +53,9 @@ class MatchController extends \BaseController {
 	{
         /** @var $match \Fussball\Match */
         $match = $this->match->find($id);
-        //$match->load('scores');
+        if(Input::get('scores') === 'true') {
+            $match->load('scores');
+        }
         return $match;
 	}
 
@@ -75,7 +78,7 @@ class MatchController extends \BaseController {
 	 */
 	public function update($id)
 	{
-		//
+        //return $this->match->create(Input::get());
 	}
 
 	/**
