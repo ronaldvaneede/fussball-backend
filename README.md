@@ -7,6 +7,7 @@ Based on Laravel 4.1
 + Reading a specific match
 + Reading a specific match with scores
 + Reading scores of a specific match
++ Creating new matches
 
 **Routing**  
 ```
@@ -29,4 +30,3 @@ curl -X POST -H "Content-Type: application/json" \
 + Run `composer install`
 + Run `artisan migrate`
 + Run `artisan db:seed` (optional) if you want to seed the database with some data
-
